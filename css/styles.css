@@ -120,6 +120,8 @@ ul {
   font-weight: 500;
   font-size: 20px;
   line-height: calc(30 / 20);
+
+  transition: color 250ms linear;
 }
 .link-nav:hover,
 .link-nav:focus,
@@ -138,6 +140,8 @@ ul {
   background-color: transparent;
   border-color: var(--second-txt-color);
   border-radius: 10px;
+
+  transition: color 250ms linear, background-color 250ms linear;
 }
 
 .button-nav:hover,
@@ -196,6 +200,8 @@ ul {
   border-radius: 10px;
   font-size: 36px;
   letter-spacing: 0.03em;
+
+transition: color 250ms linear, background-color 250ms linear;
 }
 
 .btn-hero:hover,
@@ -278,6 +284,8 @@ ul {
   background-color: var(--second-txt-color);
   font-size: 18px;
   line-height: calc(27 / 18);
+
+  transition: color 250ms linear, background-color 250ms linear;
 }
 .link-second:hover,
 .link-second:active,
@@ -424,9 +432,9 @@ ul {
   width: 654px;
 }
 
-.form > .button {
+.form > .form-button {
   margin-top: 41px;
-  padding: 20px 56px;
+  padding: 18px 56px;
 
   color: var(--white-color);
   background-color: var(--second-txt-color);
@@ -436,15 +444,24 @@ ul {
   letter-spacing: 0.03em;
   border-radius: 10px;
   border-color: transparent;
+
+  transition: color 250ms linear, background-color 250ms linear;
 }
 
-.input {
+.form-field-input {
   margin-right: 29px;
   min-width: 425px;
   min-height: 70px;
   border: 1px solid var(--main-txt-color);
   border-radius: 10px;
 }
+
+.form > .form-button:hover,
+.form > .form-button:focus {
+  color: black;
+  background-color: grey; 
+}
+
 
 /* =========== footer section style ========== */
 
@@ -474,10 +491,50 @@ ul {
   font-size: 24px;
   line-height: calc(36 / 24);
   letter-spacing: 0.02em;
+
+  transition: color 250ms linear;
 }
 
 .policy-item .link:hover,
 .policy-item .link:focus,
 .policy-item .link:active {
   color: orangered;
+}
+
+
+/**
+  |============================
+  | modal-window
+  |============================
+*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 1;
+  transform: translateY(0%);
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+  background-color: #3f3a3a47;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: translateY(-100%);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 600px;
+
+  background-color: var(--card-bcg-color);
 }
