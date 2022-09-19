@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body class="page">
-    <header class="header">
+    <header class="header" id="home" data-header>
       <div class="container header-container">
         <nav class="nav">
           <a href="./index.html" class="link link-logo"
@@ -26,19 +26,19 @@
           </a>
           <ul class="list header-list">
             <li class="list-item">
-              <a href="./index.html" class="link link-nav">Home</a>
+              <a href="#home" class="link link-nav">Home</a>
             </li>
             <li class="list-item">
-              <a href="" class="link link-nav">Skills</a>
+              <a href="#skills" class="link link-nav">Skills</a>
             </li>
             <li class="list-item">
-              <a href="" class="link link-nav">About Us</a>
+              <a href="#about" class="link link-nav">About Us</a>
             </li>
             <li class="list-item">
-              <a href="" class="link link-nav">Pricing</a>
+              <a href="#pricing" class="link link-nav">Pricing</a>
             </li>
             <li class="list-item">
-              <a href="" class="link link-nav">Contacts</a>
+              <a href="#contacts" class="link link-nav">Contacts</a>
             </li>
           </ul>
         </nav>
@@ -69,7 +69,7 @@
           />
         </div>
       </section>
-      <section class="section">
+      <section class="section" id="skills">
         <div class="container">
           <h2 class="second-title">Skills</h2>
           <ul class="list skills-list">
@@ -130,7 +130,7 @@
           </ul>
         </div>
       </section>
-      <section class="section section-about">
+      <section class="section section-about" id="about">
         <div class="container">
           <div class="about-container">
             <h2 class="section-title title-about">About Us</h2>
@@ -160,7 +160,7 @@
           <img class="img" src="./images/about-us.svg" alt="About Us Image" />
         </div>
       </section>
-      <section class="section">
+      <section class="section" id="pricing">
         <div class="container">
           <h2 class="section-title price-title">Pricing</h2>
           <ul class="list price-list">
@@ -207,7 +207,7 @@
           </ul>
         </div>
       </section>
-      <section class="section section-contact">
+      <section class="section section-contact" id="contacts">
         <div class="container">
           <img class="img" src="./images/contact.svg" alt="Contact Us" />
           <div class="contact-block">
@@ -217,15 +217,16 @@
               English test. Sign up to our newsletter for learning tips and free
               resources
             </p>
-            <form class="form">
-              <label class="form-field"></label>
+            <form class="footer-form">
+              <label class="footer-form-field">
               <input
-                class="form-field-input"
+                class="footer-form-field-input"
                 type="email"
                 name="e-mail"
                 placeholder="Enter Your E-mail"
               />
-              <button class="form-button" type="submit">Subscribe</button>
+            </label>
+              <button class="footer-form-button" type="submit">Subscribe</button>
             </form>
           </div>
         </div>
@@ -255,15 +256,61 @@
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="modal-btn" type="button" data-modal-close>
-          close
+          <svg class="modal-icon" width="18" height="18">
+            <use href="./images/symbol-defs.svg#icon-close"></use>
+          </svg>
         </button>
+      <form class="form-area">
+        <strong class="form-area-title"></strong>
+        <div class="form-group">
+          <label for="" class="form-field">
+            <input type="text" class="form-field-input" name="user-name">
+            <svg class="form-field-icon" width="20" height="20">
+              <use href=""></use>
+            </svg>
+          </label>
+          <label for="" class="form-field">
+            <input type="text" class="form-field-input" name="user-phone">
+            <svg class="form-field-icon" width="20" height="20">
+              <use href=""></use>
+            </svg>
+          </label>
+          <label for="" class="form-field">
+            <input type="text" class="form-field-input" name="user-mail">
+            <svg class="form-field-icon" width="20" height="20">
+              <use href=""></use>
+            </svg>
+          </label>
+          <label for="" class="form-field">
+            <input type="text" class="form-field-input" name="user-location">
+            <svg class="form-field-icon" width="20" height="20">
+              <use href=""></use>
+            </svg>
+          </label>
+          <label for="" class="form-field">
+            <input type="text" class="form-field-input" name="language">
+            <svg class="form-field-icon" width="20" height="20">
+              <use href=""></use>
+            </svg>
+          </label>
+          <label for="" class="form-checkbox">
+            <input type="checkbox" class="form-field-checkbox" name="policy">
+            <svg class="form-field-icon" width="20" height="20">
+              <use class="checked" href=""></use>
+              <use class="unchecked" href=""></use>
+            </svg>
+          </label>
+        </div>
+        <button class="form-field-button" type="submit">Get started</button>
+      </form>
       </div>
     </div>
 
+    <script src="./js/header.js"></script>
     <script src="./js/modal.js"></script>
     <script>
       (() => {
-        document.querySelector(".form").addEventListener("submit", (e) => {
+        document.querySelector(".form-area").addEventListener("submit", (e) => {
           e.preventDefault();
 
           new FormData(e.currentTarget).forEach((value, name) =>

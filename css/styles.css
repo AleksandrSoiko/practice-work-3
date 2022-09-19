@@ -69,10 +69,29 @@ ul {
   padding-top: 52px;
 }
 
+.header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+padding-top: 52px;
+
+  background-color: transparent;
+}
+
+.header.no-transparency {
+  background-color: #737fc280;
+
+  padding-top: 15px;
+  padding-bottom: 0px;
+}
+
+
 .header-container {
   display: flex;
   padding-top: 3px;
-  padding-bottom: 55px;
+  padding-bottom: 30px;
 }
 
 .nav {
@@ -155,6 +174,7 @@ ul {
 
 /* ---------- position hero section ------------------- */
 .hero {
+ padding-top: 180px;
   padding-bottom: 90px;
 }
 
@@ -432,7 +452,14 @@ transition: color 250ms linear, background-color 250ms linear;
   width: 654px;
 }
 
-.form > .form-button {
+.footer-form-field {
+  display: inline-block;
+  width: 425px;
+  height: 70px;
+  margin-right: 29px;
+}
+
+.footer-form > .footer-form-button {
   margin-top: 41px;
   padding: 18px 56px;
 
@@ -448,16 +475,16 @@ transition: color 250ms linear, background-color 250ms linear;
   transition: color 250ms linear, background-color 250ms linear;
 }
 
-.form-field-input {
-  margin-right: 29px;
-  min-width: 425px;
-  min-height: 70px;
+.footer-form-field-input {
+  width: 100%;
+  height: 100%;
   border: 1px solid var(--main-txt-color);
   border-radius: 10px;
+  outline: none;
 }
 
-.form > .form-button:hover,
-.form > .form-button:focus {
+.footer-form > .footer-form-button:hover,
+.footer-form > .footer-form-button:focus {
   color: black;
   background-color: grey; 
 }
@@ -512,13 +539,13 @@ transition: color 250ms linear, background-color 250ms linear;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 100;
   opacity: 1;
   transform: translateY(0%);
   width: 100%;
   height: 100%;
   visibility: visible;
-  background-color: #3f3a3a47;
+  background-color: #737fc280;
 }
 
 .backdrop.is-hidden {
@@ -535,6 +562,51 @@ transition: color 250ms linear, background-color 250ms linear;
   transform: translate(-50%, -50%);
   width: 550px;
   height: 600px;
+  padding: 15px 15px;
+
+  border-radius: 10px;
 
   background-color: var(--card-bcg-color);
+}
+
+.modal-btn {
+  position: absolute;
+  top:0;
+  right: 0;
+  transform: translate(50%, -50%);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px 5px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--time-text-color);
+  color: var(--card-bcg-color);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  color: var(--white-color);
+  background-color: var(--main-txt-color);
+}
+
+.modal-icon {
+  fill: currentColor;
+}
+
+/**
+  |============================
+  | form style
+  |============================
+*/
+
+.form-area {
+  width: 100%;
+  height: 100%;
+}
+
+.form-field {
+  display: block;
 }
